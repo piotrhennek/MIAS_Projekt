@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Vici.CoolStorage;
+using System.ComponentModel;
 namespace MIAS_CoolStorage.Models
 {
     [MapTo("Customers",DB.CONTEXT)]

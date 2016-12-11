@@ -15,6 +15,7 @@ namespace MIAS_CoolStorage
         public static void InitDB(string connectionString, string context)
         {
             CSConfig.SetDB(new CSDataProviderSqlServer(connectionString), context);
+            
             //InitDB();
         }
 
