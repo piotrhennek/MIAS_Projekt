@@ -36,6 +36,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="Vici.CoolStorage, Version=1.5.3.1022, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\vici.coolstorage.1.5.3.1022\lib\net35\Vici.CoolStorage.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Vici.Core, Version=2.0.3.4932, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\vici.core.2.0.3\lib\net45\Vici.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -50,13 +58,16 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="MIAS_CoolStorage.cs" />
+    <Compile Include="MIAS_Logic_CoolStorage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MIAS_CoolStorage\MIAS_CoolStorage.csproj">
-      <Project>{7dd3238a-6673-4196-957f-995003a36f1c}</Project>
-      <Name>MIAS_CoolStorage</Name>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MIAS_Logic\MIAS_Logic.csproj">
+      <Project>{ec7cd6f2-7951-4a08-b537-be3c40cdfa68}</Project>
+      <Name>MIAS_Logic</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

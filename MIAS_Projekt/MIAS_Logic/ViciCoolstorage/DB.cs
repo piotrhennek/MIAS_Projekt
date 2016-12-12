@@ -1,13 +1,11 @@
-﻿using MIAS_CoolStorage.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Vici.CoolStorage;
 
-namespace MIAS_CoolStorage
+namespace MIAS_Logic.ViciCoolstorage
 {
     public static class DB
     {

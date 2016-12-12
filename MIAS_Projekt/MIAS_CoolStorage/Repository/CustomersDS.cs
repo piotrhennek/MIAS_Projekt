@@ -10,19 +10,10 @@ namespace MIAS_CoolStorage.Repository
 {
     public class CustomersDS
     {
-        //public CustomersModel Get(int id)
-        //{
-        //    return CustomersModel.Read(id);
         //}
-
-        //public void TEST()
-        //{
-           
-        //}
-        public string[] GetSurnames()
+        public CSGenericRecordList SelectDataByViciCoolStorage(string selectSql)
         {
-            var resut = CSDatabase.Context[DB.CONTEXT].RunQuery("select CustomerSurname from Customers");
-            return new string[2];
+            return CSDatabase.Context[DB.CONTEXT].RunQuery(selectSql);
         }
     }
 }
