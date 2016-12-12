@@ -11,9 +11,15 @@ namespace MIAS_Logic.ViciCoolstorage
     {
         public const string CONTEXT = "mias";
 
-        public static void InitDB(string connectionString, string context)
+        public static void InitSQLDB(string connectionString, string context)
         {
             CSConfig.SetDB(new CSDataProviderSqlServer(connectionString), context);
+        }
+
+        public static void InitOracleDB(string connectionString, string context)
+        {
+            CSConfig.SetDB(new CSDataProviderOracle(connectionString), context);
+            var test = CSDatabase.Context["s85137"];
         }
     }
 }
