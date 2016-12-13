@@ -21,7 +21,7 @@ namespace MIAS_Logic.ViciCoolstorage
         protected override ICSDbConnection CreateConnection()
         {
             OracleConnection conn = new OracleConnection(ConnectionString);
-
+  
             conn.Open();
 
             return new CSOracleConnection(conn);

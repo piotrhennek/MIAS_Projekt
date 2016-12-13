@@ -7,11 +7,11 @@ using Vici.CoolStorage;
 
 namespace MIAS_Logic.ViciCoolstorage
 {
-    public class Repository
+    public class ViciCoolstorageRepository
     {
-        public CSGenericRecordList SelectData(string selectCommand)
+        public CSGenericRecordList SelectData(string selectCommand,string context)
         {
-            return CSDatabase.Context[DB.CONTEXT].RunQuery(selectCommand);
+            return CSDatabase.Context[context].RunQuery(selectCommand);
         }
     }
 }
