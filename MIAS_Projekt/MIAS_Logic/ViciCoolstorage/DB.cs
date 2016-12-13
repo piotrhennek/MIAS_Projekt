@@ -11,6 +11,7 @@ namespace MIAS_Logic.ViciCoolstorage
     {
         public const string SQLCONTEXT = "mias";
         public const string ORACLECONTEXT = "s85137";
+        public const string SqlConnectionString = "Initial Catalog=mias;Data Source=localhost;User ID=test;PWD=test;";
 
         public static void InitSQLDB(string connectionString)
         {
