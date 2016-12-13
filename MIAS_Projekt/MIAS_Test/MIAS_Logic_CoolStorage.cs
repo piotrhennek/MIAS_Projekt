@@ -11,7 +11,7 @@ namespace MIAS_Test
     public class MIAS_Logic_CoolStorage
     {
         private const string sqlConnectionString = "Initial Catalog=mias;Data Source=localhost;User ID=test;PWD=test;";
-        private const string oracleConnectionString = "user id=s85137;password=malybaza;data source=217.173.198.136/xe";
+        private const string oracleConnectionString = "user id=s85137;password=s85137;data source=217.173.198.136/xe";
         private const string selectCommad = "Select IdCustomer, CustomerSurname from Customers";
         private Repository repo;
         public MIAS_Logic_CoolStorage()
