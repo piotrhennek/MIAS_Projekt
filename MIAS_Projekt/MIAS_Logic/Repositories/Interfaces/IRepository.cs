@@ -9,14 +9,14 @@ namespace MIAS_Logic
     public interface IRepository<T>
     {
         List<T> GetAll();
-        T GetById(int id);
-        int Count();
+        //T GetById(int id);
+        //int Count();
 
-        void Insert(T entity);
+        //void Insert(T entity);
 
-        void Update(T entity);
+        //void Update(T entity);
 
-        void DeleteById(int id);
-        void DeleteAll();
+        //void DeleteById(int id);
+        //void DeleteAll();
     }
 }

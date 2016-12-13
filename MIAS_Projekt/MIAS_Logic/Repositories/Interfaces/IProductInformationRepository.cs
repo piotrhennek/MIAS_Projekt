@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace MIAS_Logic
 {
-    public abstract class ModelBase
+    public interface IProductInformationRepository : IRepository<ProductInformationModel>
     {
-        public int? Id { get; set; }
     }
 }

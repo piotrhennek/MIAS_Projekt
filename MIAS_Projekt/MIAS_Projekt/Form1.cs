@@ -34,15 +34,17 @@ namespace MIAS_Projekt
 
         private void SetResults()
         {
+            var time = 0;
+            var rows = 1;
             var results = logic.GetQueriesTimes();
 
             var viciSqlResult=results[DatabasesEnum.ViciSql];
-                lbSqlServerCSTime.Text = viciSqlResult[0].ToString();
-                lbSqlServerCSRows.Text = viciSqlResult[1].ToString();
+                lbSqlServerCSTime.Text = viciSqlResult[time].ToString();
+                lbSqlServerCSRows.Text = viciSqlResult[rows].ToString();
 
             var viciOracleResult = results[DatabasesEnum.ViciOracle];
-            lbOracleCSTime.Text = viciOracleResult[0].ToString();
-            lbOracleCSRows.Text = viciOracleResult[1].ToString();
+            lbOracleCSTime.Text = viciOracleResult[time].ToString();
+            lbOracleCSRows.Text = viciOracleResult[rows].ToString();
 
             logic.LogData();
         }
