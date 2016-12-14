@@ -40,7 +40,7 @@ namespace MIAS_Test
         {
             var logic = new RepositoriesLogic();
             logic.Query = selectCommad;
-            logic.RunViciCoolStorageQuery();
+            logic.RunViciCoolStorageQueries();
             var times = logic.GetQueriesTimes();
         }
 
