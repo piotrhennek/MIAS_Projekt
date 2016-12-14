@@ -9,8 +9,9 @@ namespace MIAS_Logic.EntityFramework
 {
     public class MIASDbContext : DbContext
     {
-        public MIASDbContext(string nameOrConnectionString) : base(nameOrConnectionString){
-
+        public MIASDbContext(string nameOrConnectionString) : base(nameOrConnectionString)
+        {
+            this.Configuration.LazyLoadingEnabled = false;
         }
         public DbSet<CustomersModel> Customers { get; set; }
         public DbSet<InventoriesModel> Inventories { get; set; }

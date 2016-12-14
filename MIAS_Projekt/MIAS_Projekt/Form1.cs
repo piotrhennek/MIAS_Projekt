@@ -28,7 +28,8 @@ namespace MIAS_Projekt
         private void CheckTime_Click(object sender, EventArgs e)
         {
             logic.Query = tbQuery.Text;
-            logic.RunViciCoolStorageQuery();
+            logic.RunViciCoolStorageQueries();
+            logic.RunEntityFrameworkQueries();
             SetResults();
         }
 
@@ -43,9 +44,13 @@ namespace MIAS_Projekt
                 lbSqlServerCSRows.Text = viciSqlResult[rows].ToString();
 
             var viciOracleResult = results[DatabasesEnum.ViciOracle];
-            lbOracleCSTime.Text = viciOracleResult[time].ToString();
-            lbOracleCSRows.Text = viciOracleResult[rows].ToString();
+                lbOracleCSTime.Text = viciOracleResult[time].ToString();
+                lbOracleCSRows.Text = viciOracleResult[rows].ToString();
 
+            var efSqlREsult = results[DatabasesEnum.EntityFrameworkSql];
+                lbEFTime.Text = efSqlREsult[time].ToString();
+                lbEFRows.Text = efSqlREsult[rows].ToString();
+            
             logic.LogData();
         }
     }

@@ -1,6 +1,8 @@
-﻿using MIAS_Logic.ViciCoolstorage;
+﻿using MIAS_Logic.EntityFramework;
+using MIAS_Logic.ViciCoolstorage;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -25,11 +27,47 @@ namespace MIAS_Logic
             DB.InitSQLDB(sqlConnectionString);
         }
         
-        public void RunViciCoolStorageQuery()
+        public void RunViciCoolStorageQueries()
         {
             RunViciCoolStorageSqlQuery();
             RunViciCoolStorageOracleQuery();
         }
+        public void RunEntityFrameworkQueries()
+        {
+            RunEntityFrameworkSqlQuery();
+        }
+
+        private void RunEntityFrameworkSqlQuery()
+        {
+            Trace.WriteLine("EntityFramework Method");
+            int count = 0;
+
+            Stopwatch stw = new Stopwatch();
+            stw.Start();
+            using (DbContext context = new MIASDbContext(sqlConnectionString))
+            {
+                count=context.Database.SqlQuery<object>(Query).Count();
+            }
+            stw.Stop();
+            queriesTimeDictionary.Add(DatabasesEnum.EntityFrameworkSql, 
+                new string[2] { $"{stw.ElapsedMilliseconds}ms", $"{count}rows" });
+        }
+        private void RunEntityFrameworkOracleQuery()
+        {
+            Trace.WriteLine("EntityFramework Method");
+            int count = 0;
+
+            Stopwatch stw = new Stopwatch();
+            stw.Start();
+            using (DbContext context = new MIASDbContext(oracleConnectionString))
+            {
+                count = context.Database.SqlQuery<object>(Query).Count();
+            }
+            stw.Stop();
+            queriesTimeDictionary.Add(DatabasesEnum.EntityFrameworkOracle,
+                new string[2] { $"{stw.ElapsedMilliseconds}ms", $"{count}rows" });
+        }
+
 
         public IDictionary<DatabasesEnum, string[]> GetQueriesTimes()
         {

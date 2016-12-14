@@ -42,10 +42,14 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.lbOracleCSRows = new System.Windows.Forms.Label();
             this.lbOracleCSTime = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbEFTime = new System.Windows.Forms.Label();
+            this.lbEFRows = new System.Windows.Forms.Label();
             this.gbSqlServer.SuspendLayout();
             this.gbSqlServerVici.SuspendLayout();
             this.gbOracle.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbQuery
@@ -68,6 +72,7 @@
             // 
             // gbSqlServer
             // 
+            this.gbSqlServer.Controls.Add(this.groupBox1);
             this.gbSqlServer.Controls.Add(this.label2);
             this.gbSqlServer.Controls.Add(this.label1);
             this.gbSqlServer.Controls.Add(this.gbSqlServerVici);
@@ -184,6 +189,35 @@
             this.lbOracleCSTime.TabIndex = 0;
             this.lbOracleCSTime.Text = "Time";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lbEFRows);
+            this.groupBox1.Controls.Add(this.lbEFTime);
+            this.groupBox1.Location = new System.Drawing.Point(6, 112);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(364, 57);
+            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "EntityFramework6";
+            // 
+            // lbEFTime
+            // 
+            this.lbEFTime.AutoSize = true;
+            this.lbEFTime.Location = new System.Drawing.Point(152, 18);
+            this.lbEFTime.Name = "lbEFTime";
+            this.lbEFTime.Size = new System.Drawing.Size(39, 17);
+            this.lbEFTime.TabIndex = 0;
+            this.lbEFTime.Text = "Time";
+            // 
+            // lbEFRows
+            // 
+            this.lbEFRows.AutoSize = true;
+            this.lbEFRows.Location = new System.Drawing.Point(298, 18);
+            this.lbEFRows.Name = "lbEFRows";
+            this.lbEFRows.Size = new System.Drawing.Size(42, 17);
+            this.lbEFRows.TabIndex = 1;
+            this.lbEFRows.Text = "Rows";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -205,6 +239,8 @@
             this.gbOracle.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,6 +262,9 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label lbOracleCSRows;
         private System.Windows.Forms.Label lbOracleCSTime;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label lbEFRows;
+        private System.Windows.Forms.Label lbEFTime;
     }
 }
 

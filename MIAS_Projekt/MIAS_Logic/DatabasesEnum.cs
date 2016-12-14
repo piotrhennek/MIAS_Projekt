@@ -9,6 +9,8 @@ namespace MIAS_Logic
     public enum DatabasesEnum
     {
         ViciOracle,
-        ViciSql
+        ViciSql,
+        EntityFrameworkOracle,
+        EntityFrameworkSql
     }
 }
