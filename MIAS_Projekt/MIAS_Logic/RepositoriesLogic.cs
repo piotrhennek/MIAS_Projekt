@@ -13,18 +13,15 @@ namespace MIAS_Logic
 {
     public class RepositoriesLogic
     {
-        private const string sqlConnectionString = "Initial Catalog=mias;Data Source=localhost;User ID=test;PWD=test;";
-        private const string oracleConnectionString = "User Id=s85137;Password=malybaza;Data Source=(DESCRIPTION=" +
-  "(ADDRESS=(PROTOCOL=TCP)(HOST=217.173.198.136)(PORT=1522))" +
-  "(CONNECT_DATA=(SID=orclwh)));";
+       
         public string Query { get; set; }
         private IDictionary<DatabasesEnum, string[]> queriesTimeDictionary { get; set; }
 
         public RepositoriesLogic()
         {
             queriesTimeDictionary = new Dictionary<DatabasesEnum, string[]>();
-            DB.InitOracleDB(oracleConnectionString);
-            DB.InitSQLDB(sqlConnectionString);
+            DB.InitOracleDB(DatabasesConfig.OracleConnectionString);
+            DB.InitSQLDB(DatabasesConfig.SqlConnectionString);
         }
         
         public void RunViciCoolStorageQueries()
@@ -35,6 +32,7 @@ namespace MIAS_Logic
         public void RunEntityFrameworkQueries()
         {
             RunEntityFrameworkSqlQuery();
+            RunEntityFrameworkOracleQuery();
         }
 
         private void RunEntityFrameworkSqlQuery()
@@ -44,7 +42,7 @@ namespace MIAS_Logic
 
             Stopwatch stw = new Stopwatch();
             stw.Start();
-            using (DbContext context = new MIASDbContext(sqlConnectionString))
+            using (DbContext context = new MIASDbContext(DatabasesConfig.EntityFrameworkSqlName))
             {
                 count=context.Database.SqlQuery<object>(Query).Count();
             }
@@ -59,7 +57,7 @@ namespace MIAS_Logic
 
             Stopwatch stw = new Stopwatch();
             stw.Start();
-            using (DbContext context = new MIASDbContext(oracleConnectionString))
+            using (DbContext context = new MIASDbContext(DatabasesConfig.EntityFrameworkOracleName))
             {
                 count = context.Database.SqlQuery<object>(Query).Count();
             }
