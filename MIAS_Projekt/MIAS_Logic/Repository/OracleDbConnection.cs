@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace MIAS_Logic.Repository
 {
-    public class DbConnection
+    public class OracleDbConnection : IDbConnection
     {
         private OracleConnection connection { get; set;}
 
-        public DbConnection()
+        public OracleDbConnection()
         {
             connection = new OracleConnection(DatabasesConfig.OracleConnectionString);
         }
@@ -23,6 +23,13 @@ namespace MIAS_Logic.Repository
                 connection.Open();
         }
 
+
+        private void Dispose()
+        {
+            if (connection.State != System.Data.ConnectionState.Closed)
+                connection.Dispose();
+        }
+
         public int RunQuery(string query)
         {
       
@@ -31,7 +38,6 @@ namespace MIAS_Logic.Repository
             cmd.CommandText = query;
             var adapter = new OracleDataAdapter(cmd);
             OracleDataReader reader = adapter.SelectCommand.ExecuteReader();
-         
             return GetRowsCount(reader);
         }
 
@@ -42,6 +48,7 @@ namespace MIAS_Logic.Repository
             {
                 counter++;
             }
+            Dispose();
             return counter;
         }
     }

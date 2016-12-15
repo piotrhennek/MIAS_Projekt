@@ -14,8 +14,15 @@ namespace MIAS_Test
         [TestMethod]
         public void OracleRepoTest()
         {
-            DbConnection connection = new DbConnection();
-            var reulst =connection.RunQuery("select country_name from countries");
+            OracleDbConnection connection = new OracleDbConnection();
+            var result =connection.RunQuery("select country_name from countries");
+        }
+
+        [TestMethod]
+        public void SqlRepoTest()
+        {
+            SqlDbConnection connection = new SqlDbConnection();
+            var result = connection.RunQuery("select country_name from countries");
         }
     }
 }
