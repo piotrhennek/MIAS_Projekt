@@ -33,7 +33,14 @@ namespace MIAS_Logic
         public void RunEntityFrameworkQueries()
         {
             RunEntityFrameworkSqlQuery();
-            //RunEntityFrameworkOracleQuery();
+            try{
+                RunEntityFrameworkOracleQuery();
+            }
+            catch(Exception exc)
+            {
+                Trace.WriteLine($"OracleEntityFrameworkExc: {exc.Message}");
+            }
+            
         }
 
         public void RunRepositoryQueries()
@@ -44,7 +51,7 @@ namespace MIAS_Logic
 
         private void RunEntityFrameworkSqlQuery()
         {
-            Trace.WriteLine("EntityFramework Method");
+            Trace.WriteLine("EntityFramework Sql Method");
             int count = 0;
 
             Stopwatch stw = new Stopwatch();
@@ -59,7 +66,7 @@ namespace MIAS_Logic
         }
         private void RunEntityFrameworkOracleQuery()
         {
-            Trace.WriteLine("EntityFramework Method");
+            Trace.WriteLine("EntityFramework Oracle Method");
             int count = 0;
 
             Stopwatch stw = new Stopwatch();

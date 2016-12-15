@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -51,6 +52,18 @@ namespace MIAS_Projekt
             var efSqlResult = results[DatabasesEnum.EntityFrameworkSql];
                 lbEFSqlTime.Text = efSqlResult[time].ToString();
                 lbEFSqlRows.Text = efSqlResult[rows].ToString();
+
+            try
+            {
+                var efOracleResult = results[DatabasesEnum.EntityFrameworkOracle];
+                lbEFOracleTime.Text = efOracleResult[time].ToString();
+                lbEFOracleRows.Text = efOracleResult[rows].ToString();
+            }
+            catch(Exception exc)
+            {
+                Trace.WriteLine($"Proba pobrania result {exc.Message}");
+            }
+
 
             var repoSqlResult = results[DatabasesEnum.RepositorySql];
                 lbRepoSqlTime.Text = repoSqlResult[time].ToString();
