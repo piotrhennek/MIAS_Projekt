@@ -91,6 +91,7 @@
     <Compile Include="Repositories\Interfaces\IOrderItemsRepository.cs" />
     <Compile Include="Repositories\Interfaces\IOrdersRepository.cs" />
     <Compile Include="Repositories\Interfaces\IRepository.cs" />
+    <Compile Include="Repository\DbConnection.cs" />
     <Compile Include="ViciCoolstorage\CSDataProviderOracle.cs" />
     <Compile Include="ViciCoolstorage\ViciCoolstorageRepository.cs" />
   </ItemGroup>

@@ -70,6 +70,7 @@
   <ItemGroup>
     <Compile Include="MIAST_Logic_EntityFramework.cs" />
     <Compile Include="MIAS_Logic_CoolStorage.cs" />
+    <Compile Include="MIAS_Logic_Repository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
