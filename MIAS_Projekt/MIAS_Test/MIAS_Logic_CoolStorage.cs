@@ -11,11 +11,7 @@ namespace MIAS_Test
     [TestClass]
     public class MIAS_Logic_CoolStorage
     {
-        private const string sqlConnectionString = "Initial Catalog=mias;Data Source=localhost;User ID=test;PWD=test;";
         private const string selectCommad = "select country_id from countries";
-        private const string oracleConnectionString = "User Id=s85137;Password=malybaza;Data Source=(DESCRIPTION=" +
-  "(ADDRESS=(PROTOCOL=TCP)(HOST=217.173.198.136)(PORT=1522))" +
-  "(CONNECT_DATA=(SID=orclwh)));";
         private ViciCoolstorageRepository repo;
 
         [TestMethod]
