@@ -20,8 +20,8 @@ namespace MIAS_Logic
         public RepositoriesLogic()
         {
             queriesTimeDictionary = new Dictionary<DatabasesEnum, string[]>();
-            DB.InitOracleDB(DatabasesConfig.OracleConnectionString);
-            DB.InitSQLDB(DatabasesConfig.SqlConnectionString);
+            //DB.InitOracleDB(DatabasesConfig.OracleConnectionString);
+            //DB.InitSQLDB(DatabasesConfig.SqlConnectionString);
         }
         
         public void RunViciCoolStorageQueries()
@@ -32,7 +32,7 @@ namespace MIAS_Logic
         public void RunEntityFrameworkQueries()
         {
             RunEntityFrameworkSqlQuery();
-            RunEntityFrameworkOracleQuery();
+            //RunEntityFrameworkOracleQuery();
         }
 
         private void RunEntityFrameworkSqlQuery()
@@ -76,7 +76,8 @@ namespace MIAS_Logic
         {
             Stopwatch stw = new Stopwatch();
             stw.Start();
-            var result= CSDatabase.Context[DB.SQLCONTEXT].RunQuery(Query);
+            DatabasesConfig.InitViciSQLDB();
+            var result= CSDatabase.Context[DatabasesConfig.SQLCONTEXT].RunQuery(Query);
             stw.Stop();
             queriesTimeDictionary.Add(DatabasesEnum.ViciSql, new string[2] { $"{stw.ElapsedMilliseconds}ms", $"{result.Count}rows" });
         }
@@ -85,7 +86,8 @@ namespace MIAS_Logic
         {
             Stopwatch stw = new Stopwatch();
             stw.Start();
-            var result=CSDatabase.Context[DB.ORACLECONTEXT].RunQuery(Query);
+            DatabasesConfig.InitViciOracleDB();
+            var result=CSDatabase.Context[DatabasesConfig.ORACLECONTEXT].RunQuery(Query);
             stw.Stop();
             queriesTimeDictionary.Add(DatabasesEnum.ViciOracle, new string[2] { $"{stw.ElapsedMilliseconds}ms", $"{result.Count}rows" });
         }

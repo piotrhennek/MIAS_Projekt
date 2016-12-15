@@ -23,16 +23,16 @@ namespace MIAS_Test
         public void SelectData()
         {
             repo = new ViciCoolstorageRepository();
-            DB.InitSQLDB(sqlConnectionString);
-            var test =repo.SelectData(selectCommad,DB.SQLCONTEXT);
+            DatabasesConfig.InitViciSQLDB();
+            var test =repo.SelectData(selectCommad,DatabasesConfig.SQLCONTEXT);
         }
 
         [TestMethod]
         public void OracleTest()
         {
             var oracleRepo = new ViciCoolstorageRepository();
-            DB.InitOracleDB(oracleConnectionString);
-            var test =oracleRepo.SelectData(selectCommad, DB.ORACLECONTEXT);
+            DatabasesConfig.InitViciOracleDB();
+            var test =oracleRepo.SelectData(selectCommad, DatabasesConfig.ORACLECONTEXT);
         }
 
         [TestMethod]
