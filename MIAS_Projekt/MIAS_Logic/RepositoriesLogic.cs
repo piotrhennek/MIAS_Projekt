@@ -1,4 +1,5 @@
 ﻿using MIAS_Logic.EntityFramework;
+using MIAS_Logic.Repository;
 using MIAS_Logic.ViciCoolstorage;
 using System;
 using System.Collections.Generic;
@@ -33,6 +34,12 @@ namespace MIAS_Logic
         {
             RunEntityFrameworkSqlQuery();
             //RunEntityFrameworkOracleQuery();
+        }
+
+        public void RunRepositoryQueries()
+        {
+            RunRepoSqlQuery();
+            RunRepoOracleQuery();
         }
 
         private void RunEntityFrameworkSqlQuery()
@@ -90,6 +97,24 @@ namespace MIAS_Logic
             var result=CSDatabase.Context[DatabasesConfig.ORACLECONTEXT].RunQuery(Query);
             stw.Stop();
             queriesTimeDictionary.Add(DatabasesEnum.ViciOracle, new string[2] { $"{stw.ElapsedMilliseconds}ms", $"{result.Count}rows" });
+        }
+
+        private void RunRepoSqlQuery()
+        {
+            Stopwatch stw = new Stopwatch();
+            stw.Start();
+            var count = new SqlDbConnection().RunQuery(Query);
+            stw.Stop();
+            queriesTimeDictionary.Add(DatabasesEnum.RepositorySql, new string[2] { $"{stw.ElapsedMilliseconds}ms", $"{count}rows" });
+        }
+
+        private void RunRepoOracleQuery()
+        {
+            Stopwatch stw = new Stopwatch();
+            stw.Start();
+            var count = new OracleDbConnection().RunQuery(Query);
+            stw.Stop();
+            queriesTimeDictionary.Add(DatabasesEnum.RepositoryOracle, new string[2] { $"{stw.ElapsedMilliseconds}ms", $"{count}rows" });
         }
 
         public void LogData()

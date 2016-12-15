@@ -30,6 +30,7 @@ namespace MIAS_Projekt
             logic.Query = tbQuery.Text;
             logic.RunViciCoolStorageQueries();
             logic.RunEntityFrameworkQueries();
+            logic.RunRepositoryQueries();
             SetResults();
         }
 
@@ -47,10 +48,17 @@ namespace MIAS_Projekt
                 lbOracleCSTime.Text = viciOracleResult[time].ToString();
                 lbOracleCSRows.Text = viciOracleResult[rows].ToString();
 
-            var efSqlREsult = results[DatabasesEnum.EntityFrameworkSql];
-                lbEFTime.Text = efSqlREsult[time].ToString();
-                lbEFRows.Text = efSqlREsult[rows].ToString();
-            
+            var efSqlResult = results[DatabasesEnum.EntityFrameworkSql];
+                lbEFSqlTime.Text = efSqlResult[time].ToString();
+                lbEFSqlRows.Text = efSqlResult[rows].ToString();
+
+            var repoSqlResult = results[DatabasesEnum.RepositorySql];
+                lbRepoSqlTime.Text = repoSqlResult[time].ToString();
+                lbRepoSqlRows.Text = repoSqlResult[rows].ToString();
+
+            var repoOracleResult = results[DatabasesEnum.RepositoryOracle];
+                lbRepoOracleTime.Text = repoOracleResult[time].ToString();
+                lbRepoOracleRows.Text = repoOracleResult[rows].ToString();
             logic.LogData();
         }
     }

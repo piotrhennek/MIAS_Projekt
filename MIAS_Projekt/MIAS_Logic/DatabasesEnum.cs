@@ -11,6 +11,8 @@ namespace MIAS_Logic
         ViciOracle,
         ViciSql,
         EntityFrameworkOracle,
-        EntityFrameworkSql
+        EntityFrameworkSql,
+        RepositoryOracle,
+        RepositorySql
     }
 }

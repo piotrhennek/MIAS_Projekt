@@ -31,6 +31,9 @@
             this.tbQuery = new System.Windows.Forms.TextBox();
             this.CheckTime = new System.Windows.Forms.Button();
             this.gbSqlServer = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbEFSqlRows = new System.Windows.Forms.Label();
+            this.lbEFSqlTime = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.gbSqlServerVici = new System.Windows.Forms.GroupBox();
@@ -42,14 +45,23 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.lbOracleCSRows = new System.Windows.Forms.Label();
             this.lbOracleCSTime = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lbEFTime = new System.Windows.Forms.Label();
-            this.lbEFRows = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lbRepoSqlTime = new System.Windows.Forms.Label();
+            this.lbRepoSqlRows = new System.Windows.Forms.Label();
+            this.lbRepoOracleTime = new System.Windows.Forms.Label();
+            this.lbRepoOracleRows = new System.Windows.Forms.Label();
+            this.gbEFORacle = new System.Windows.Forms.GroupBox();
+            this.lbEFOracleTime = new System.Windows.Forms.Label();
+            this.lbEFOracleRows = new System.Windows.Forms.Label();
             this.gbSqlServer.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.gbSqlServerVici.SuspendLayout();
             this.gbOracle.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.gbEFORacle.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbQuery
@@ -72,6 +84,7 @@
             // 
             // gbSqlServer
             // 
+            this.gbSqlServer.Controls.Add(this.groupBox2);
             this.gbSqlServer.Controls.Add(this.groupBox1);
             this.gbSqlServer.Controls.Add(this.label2);
             this.gbSqlServer.Controls.Add(this.label1);
@@ -82,6 +95,35 @@
             this.gbSqlServer.TabIndex = 3;
             this.gbSqlServer.TabStop = false;
             this.gbSqlServer.Text = "MSSQL server";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lbEFSqlRows);
+            this.groupBox1.Controls.Add(this.lbEFSqlTime);
+            this.groupBox1.Location = new System.Drawing.Point(6, 112);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(364, 57);
+            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "EntityFramework6";
+            // 
+            // lbEFSqlRows
+            // 
+            this.lbEFSqlRows.AutoSize = true;
+            this.lbEFSqlRows.Location = new System.Drawing.Point(298, 18);
+            this.lbEFSqlRows.Name = "lbEFSqlRows";
+            this.lbEFSqlRows.Size = new System.Drawing.Size(42, 17);
+            this.lbEFSqlRows.TabIndex = 1;
+            this.lbEFSqlRows.Text = "Rows";
+            // 
+            // lbEFSqlTime
+            // 
+            this.lbEFSqlTime.AutoSize = true;
+            this.lbEFSqlTime.Location = new System.Drawing.Point(152, 18);
+            this.lbEFSqlTime.Name = "lbEFSqlTime";
+            this.lbEFSqlTime.Size = new System.Drawing.Size(39, 17);
+            this.lbEFSqlTime.TabIndex = 0;
+            this.lbEFSqlTime.Text = "Time";
             // 
             // label2
             // 
@@ -132,6 +174,8 @@
             // 
             // gbOracle
             // 
+            this.gbOracle.Controls.Add(this.gbEFORacle);
+            this.gbOracle.Controls.Add(this.groupBox3);
             this.gbOracle.Controls.Add(this.label4);
             this.gbOracle.Controls.Add(this.label3);
             this.gbOracle.Controls.Add(this.groupBox4);
@@ -189,34 +233,92 @@
             this.lbOracleCSTime.TabIndex = 0;
             this.lbOracleCSTime.Text = "Time";
             // 
-            // groupBox1
+            // groupBox2
             // 
-            this.groupBox1.Controls.Add(this.lbEFRows);
-            this.groupBox1.Controls.Add(this.lbEFTime);
-            this.groupBox1.Location = new System.Drawing.Point(6, 112);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(364, 57);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "EntityFramework6";
+            this.groupBox2.Controls.Add(this.lbRepoSqlRows);
+            this.groupBox2.Controls.Add(this.lbRepoSqlTime);
+            this.groupBox2.Location = new System.Drawing.Point(6, 175);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(364, 53);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Repository";
             // 
-            // lbEFTime
+            // groupBox3
             // 
-            this.lbEFTime.AutoSize = true;
-            this.lbEFTime.Location = new System.Drawing.Point(152, 18);
-            this.lbEFTime.Name = "lbEFTime";
-            this.lbEFTime.Size = new System.Drawing.Size(39, 17);
-            this.lbEFTime.TabIndex = 0;
-            this.lbEFTime.Text = "Time";
+            this.groupBox3.Controls.Add(this.lbRepoOracleRows);
+            this.groupBox3.Controls.Add(this.lbRepoOracleTime);
+            this.groupBox3.Location = new System.Drawing.Point(10, 175);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(374, 53);
+            this.groupBox3.TabIndex = 3;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Repository";
             // 
-            // lbEFRows
+            // lbRepoSqlTime
             // 
-            this.lbEFRows.AutoSize = true;
-            this.lbEFRows.Location = new System.Drawing.Point(298, 18);
-            this.lbEFRows.Name = "lbEFRows";
-            this.lbEFRows.Size = new System.Drawing.Size(42, 17);
-            this.lbEFRows.TabIndex = 1;
-            this.lbEFRows.Text = "Rows";
+            this.lbRepoSqlTime.AutoSize = true;
+            this.lbRepoSqlTime.Location = new System.Drawing.Point(152, 27);
+            this.lbRepoSqlTime.Name = "lbRepoSqlTime";
+            this.lbRepoSqlTime.Size = new System.Drawing.Size(39, 17);
+            this.lbRepoSqlTime.TabIndex = 0;
+            this.lbRepoSqlTime.Text = "Time";
+            // 
+            // lbRepoSqlRows
+            // 
+            this.lbRepoSqlRows.AutoSize = true;
+            this.lbRepoSqlRows.Location = new System.Drawing.Point(298, 27);
+            this.lbRepoSqlRows.Name = "lbRepoSqlRows";
+            this.lbRepoSqlRows.Size = new System.Drawing.Size(42, 17);
+            this.lbRepoSqlRows.TabIndex = 1;
+            this.lbRepoSqlRows.Text = "Rows";
+            // 
+            // lbRepoOracleTime
+            // 
+            this.lbRepoOracleTime.AutoSize = true;
+            this.lbRepoOracleTime.Location = new System.Drawing.Point(171, 18);
+            this.lbRepoOracleTime.Name = "lbRepoOracleTime";
+            this.lbRepoOracleTime.Size = new System.Drawing.Size(39, 17);
+            this.lbRepoOracleTime.TabIndex = 0;
+            this.lbRepoOracleTime.Text = "Time";
+            // 
+            // lbRepoOracleRows
+            // 
+            this.lbRepoOracleRows.AutoSize = true;
+            this.lbRepoOracleRows.Location = new System.Drawing.Point(311, 18);
+            this.lbRepoOracleRows.Name = "lbRepoOracleRows";
+            this.lbRepoOracleRows.Size = new System.Drawing.Size(42, 17);
+            this.lbRepoOracleRows.TabIndex = 1;
+            this.lbRepoOracleRows.Text = "Rows";
+            // 
+            // gbEFORacle
+            // 
+            this.gbEFORacle.Controls.Add(this.lbEFOracleRows);
+            this.gbEFORacle.Controls.Add(this.lbEFOracleTime);
+            this.gbEFORacle.Location = new System.Drawing.Point(10, 112);
+            this.gbEFORacle.Name = "gbEFORacle";
+            this.gbEFORacle.Size = new System.Drawing.Size(374, 57);
+            this.gbEFORacle.TabIndex = 4;
+            this.gbEFORacle.TabStop = false;
+            this.gbEFORacle.Text = "EntityFramework6";
+            // 
+            // lbEFOracleTime
+            // 
+            this.lbEFOracleTime.AutoSize = true;
+            this.lbEFOracleTime.Location = new System.Drawing.Point(171, 18);
+            this.lbEFOracleTime.Name = "lbEFOracleTime";
+            this.lbEFOracleTime.Size = new System.Drawing.Size(39, 17);
+            this.lbEFOracleTime.TabIndex = 0;
+            this.lbEFOracleTime.Text = "Time";
+            // 
+            // lbEFOracleRows
+            // 
+            this.lbEFOracleRows.AutoSize = true;
+            this.lbEFOracleRows.Location = new System.Drawing.Point(311, 18);
+            this.lbEFOracleRows.Name = "lbEFOracleRows";
+            this.lbEFOracleRows.Size = new System.Drawing.Size(42, 17);
+            this.lbEFOracleRows.TabIndex = 1;
+            this.lbEFOracleRows.Text = "Rows";
             // 
             // Form1
             // 
@@ -233,14 +335,20 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.gbSqlServer.ResumeLayout(false);
             this.gbSqlServer.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.gbSqlServerVici.ResumeLayout(false);
             this.gbSqlServerVici.PerformLayout();
             this.gbOracle.ResumeLayout(false);
             this.gbOracle.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.gbEFORacle.ResumeLayout(false);
+            this.gbEFORacle.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,8 +371,17 @@
         private System.Windows.Forms.Label lbOracleCSRows;
         private System.Windows.Forms.Label lbOracleCSTime;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label lbEFRows;
-        private System.Windows.Forms.Label lbEFTime;
+        private System.Windows.Forms.Label lbEFSqlRows;
+        private System.Windows.Forms.Label lbEFSqlTime;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label lbRepoSqlRows;
+        private System.Windows.Forms.Label lbRepoSqlTime;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label lbRepoOracleRows;
+        private System.Windows.Forms.Label lbRepoOracleTime;
+        private System.Windows.Forms.GroupBox gbEFORacle;
+        private System.Windows.Forms.Label lbEFOracleRows;
+        private System.Windows.Forms.Label lbEFOracleTime;
     }
 }
 
