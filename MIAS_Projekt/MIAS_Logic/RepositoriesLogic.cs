@@ -17,6 +17,7 @@ namespace MIAS_Logic
        
         public string Query { get; set; }
         private IDictionary<DatabasesEnum, string[]> queriesTimeDictionary { get; set; }
+        public int resultCount;
 
         public RepositoriesLogic()
         {
@@ -58,11 +59,11 @@ namespace MIAS_Logic
             stw.Start();
             using (DbContext context = new MIASDbContext(DatabasesConfig.EntityFrameworkSqlName))
             {
-                count=context.Database.SqlQuery<object>(Query).Count();
+                resultCount = context.Database.SqlQuery<object>(Query).Count();
             }
             stw.Stop();
             queriesTimeDictionary.Add(DatabasesEnum.EntityFrameworkSql, 
-                new string[2] { $"{stw.ElapsedMilliseconds}ms", $"{count}rows" });
+                new string[2] { $"{stw.ElapsedMilliseconds}ms", $"{resultCount}rows" });
         }
         private void RunEntityFrameworkOracleQuery()
         {
@@ -71,13 +72,23 @@ namespace MIAS_Logic
 
             Stopwatch stw = new Stopwatch();
             stw.Start();
-            using (DbContext context = new MIASDbContext(DatabasesConfig.EntityFrameworkOracleName))
+            try
             {
-                count = context.Database.SqlQuery<object>(Query).Count();
+                using (DbContext context = new MIASDbContext(DatabasesConfig.EntityFrameworkOracleName))
+                {
+                    count = context.Database.SqlQuery<object>(Query).Count();
+                }
+                stw.Stop();
+                queriesTimeDictionary.Add(DatabasesEnum.EntityFrameworkOracle,
+                    new string[2] { $"{stw.ElapsedMilliseconds}ms", $"{count}rows" });
             }
-            stw.Stop();
-            queriesTimeDictionary.Add(DatabasesEnum.EntityFrameworkOracle,
-                new string[2] { $"{stw.ElapsedMilliseconds}ms", $"{count}rows" });
+            catch
+            {
+
+                stw.Stop();
+                queriesTimeDictionary.Add(DatabasesEnum.EntityFrameworkOracle,
+                    new string[2] { $"{stw.ElapsedMilliseconds}ms", $"{resultCount}rows" });
+            }
         }
 
 
