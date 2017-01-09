@@ -28,7 +28,7 @@ namespace MIAS_Logic
         
         public void RunViciCoolStorageQueries()
         {
-            RunViciCoolStorageSqlQuery();
+         //   RunViciCoolStorageSqlQuery();
             RunViciCoolStorageOracleQuery();
         }
         public void RunEntityFrameworkQueries()
@@ -46,7 +46,7 @@ namespace MIAS_Logic
 
         public void RunRepositoryQueries()
         {
-            RunRepoSqlQuery();
+        //    RunRepoSqlQuery();
             RunRepoOracleQuery();
         }
 
