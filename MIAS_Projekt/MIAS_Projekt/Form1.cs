@@ -29,8 +29,8 @@ namespace MIAS_Projekt
         private void CheckTime_Click(object sender, EventArgs e)
         {
             logic.Query = tbQuery.Text;
-          //  logic.RunViciCoolStorageQueries();
-           // logic.RunEntityFrameworkQueries();
+            logic.RunViciCoolStorageQueries();
+            logic.RunEntityFrameworkQueries();
             logic.RunRepositoryQueries();
             SetResults();
         }
@@ -40,39 +40,68 @@ namespace MIAS_Projekt
             var time = 0;
             var rows = 1;
             var results = logic.GetQueriesTimes();
-
-            var viciSqlResult=results[DatabasesEnum.ViciSql];
+            try
+            {
+                var viciSqlResult = results[DatabasesEnum.ViciSql];
                 lbSqlServerCSTime.Text = viciSqlResult[time].ToString();
                 lbSqlServerCSRows.Text = viciSqlResult[rows].ToString();
-
-            var viciOracleResult = results[DatabasesEnum.ViciOracle];
+            }
+            catch (Exception exc)
+            {
+                Trace.WriteLine($"Proba pobrania result {exc.Message}");
+            }
+            try
+            {
+                var viciOracleResult = results[DatabasesEnum.ViciOracle];
                 lbOracleCSTime.Text = viciOracleResult[time].ToString();
                 lbOracleCSRows.Text = viciOracleResult[rows].ToString();
-
-            var efSqlResult = results[DatabasesEnum.EntityFrameworkSql];
+            }
+            catch (Exception exc)
+            {
+                Trace.WriteLine($"Proba pobrania result {exc.Message}");
+            }
+            try
+            {
+                var efSqlResult = results[DatabasesEnum.EntityFrameworkSql];
                 lbEFSqlTime.Text = efSqlResult[time].ToString();
                 lbEFSqlRows.Text = efSqlResult[rows].ToString();
-
+            }
+            catch (Exception exc)
+            {
+                Trace.WriteLine($"Proba pobrania result {exc.Message}");
+            }
             try
             {
                 var efOracleResult = results[DatabasesEnum.EntityFrameworkOracle];
                 lbEFOracleTime.Text = efOracleResult[time].ToString();
                 lbEFOracleRows.Text = efOracleResult[rows].ToString();
             }
-            catch(Exception exc)
+            catch (Exception exc)
             {
                 Trace.WriteLine($"Proba pobrania result {exc.Message}");
             }
 
-
-            var repoSqlResult = results[DatabasesEnum.RepositorySql];
+            try
+            {
+                var repoSqlResult = results[DatabasesEnum.RepositorySql];
                 lbRepoSqlTime.Text = repoSqlResult[time].ToString();
                 lbRepoSqlRows.Text = repoSqlResult[rows].ToString();
-
-            var repoOracleResult = results[DatabasesEnum.RepositoryOracle];
+            }
+            catch (Exception exc)
+            {
+                Trace.WriteLine($"Proba pobrania result {exc.Message}");
+            }
+            try
+            {
+                var repoOracleResult = results[DatabasesEnum.RepositoryOracle];
                 lbRepoOracleTime.Text = repoOracleResult[time].ToString();
                 lbRepoOracleRows.Text = repoOracleResult[rows].ToString();
-            logic.LogData();
+                logic.LogData();
+            }
+            catch (Exception exc)
+            {
+                Trace.WriteLine($"Proba pobrania result {exc.Message}");
+            }
         }
 
         private void label5_Click(object sender, EventArgs e)

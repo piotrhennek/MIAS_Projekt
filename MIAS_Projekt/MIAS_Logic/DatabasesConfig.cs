@@ -13,7 +13,7 @@ namespace MIAS_Logic
         public const string EntityFrameworkSqlName = "name=SqlServerConnectionString";
         public const string EntityFrameworkOracleName = "name=OracleServerConnectionString";
 
-        public const string SqlConnectionString = "Initial Catalog=mias;Data Source=localhost;User ID=test;PWD=test;";
+        public const string SqlConnectionString = @"Server=PEDRO\INSOFT2014;Database=test;Trusted_Connection=True;";
         public const string OracleConnectionString = "Data Source=(DESCRIPTION =    (ADDRESS = (PROTOCOL = TCP)(HOST = 217.173.198.136)(PORT = 1522))    (CONNECT_DATA =	(SERVER=DEDICATED)      (SID = orclwh)    )  );User Id=s84038;Password=student_s84038;";
 
         public const string SQLCONTEXT = "mias";
