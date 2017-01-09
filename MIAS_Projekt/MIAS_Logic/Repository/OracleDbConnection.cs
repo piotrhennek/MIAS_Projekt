@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,15 +31,38 @@ namespace MIAS_Logic.Repository
                 connection.Dispose();
         }
 
-        public int RunQuery(string query)
+        public List<long> RunQuery(string query)
         {
       
             Connect();
             var cmd = connection.CreateCommand();
             cmd.CommandText = query;
             var adapter = new OracleDataAdapter(cmd);
-            OracleDataReader reader = adapter.SelectCommand.ExecuteReader();
-            return GetRowsCount(reader);
+          //  OracleDataReader reader = adapter.SelectCommand.ExecuteReader();
+            var result = new Dictionary<string, object>();
+            var listOfResults = new List<Dictionary<string, object>>();
+            var listOfElapsedMilliseconds = new List<long>();
+
+            for (int i = 0; i < 100; i++)
+            {
+                Stopwatch stw = new Stopwatch();
+                stw.Start();
+                using (var reader = adapter.SelectCommand.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        for (int lp = 0; lp < reader.FieldCount; lp++)
+                        {
+                            result.Add(reader.GetName(lp), reader.GetValue(lp));
+                        }
+                        listOfResults.Add(result);
+                        result.Clear();
+                    }
+                }
+                stw.Stop();
+                listOfElapsedMilliseconds.Add(stw.ElapsedMilliseconds);
+            }
+            return listOfElapsedMilliseconds;
         }
 
         private int GetRowsCount(OracleDataReader reader)

@@ -8,6 +8,6 @@ namespace MIAS_Logic.Repository
 {
     public interface IDbConnection
     {
-        int RunQuery(string query);
+        List<long> RunQuery(string query);
     }
 }
