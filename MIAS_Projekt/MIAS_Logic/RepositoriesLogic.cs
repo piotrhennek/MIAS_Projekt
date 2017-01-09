@@ -46,7 +46,9 @@ namespace MIAS_Logic
 
         public void RunRepositoryQueries()
         {
+
        //     RunRepoSqlQuery();
+
             RunRepoOracleQuery();
         }
 

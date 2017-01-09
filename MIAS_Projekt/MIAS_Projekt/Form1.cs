@@ -29,8 +29,8 @@ namespace MIAS_Projekt
         private void CheckTime_Click(object sender, EventArgs e)
         {
             logic.Query = tbQuery.Text;
-            logic.RunViciCoolStorageQueries();
-            logic.RunEntityFrameworkQueries();
+          //  logic.RunViciCoolStorageQueries();
+           // logic.RunEntityFrameworkQueries();
             logic.RunRepositoryQueries();
             SetResults();
         }
@@ -73,6 +73,11 @@ namespace MIAS_Projekt
                 lbRepoOracleTime.Text = repoOracleResult[time].ToString();
                 lbRepoOracleRows.Text = repoOracleResult[rows].ToString();
             logic.LogData();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
