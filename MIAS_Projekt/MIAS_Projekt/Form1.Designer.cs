@@ -48,7 +48,7 @@
             this.lbOracleCSTime = new System.Windows.Forms.Label();
             this.lbQuery = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbReplies = new System.Windows.Forms.TextBox();
             this.gbSqlServer.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -281,19 +281,19 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "Ilość powtórzeń";
             // 
-            // textBox1
+            // tbReplies
             // 
-            this.textBox1.Location = new System.Drawing.Point(130, 310);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 7;
+            this.tbReplies.Location = new System.Drawing.Point(130, 310);
+            this.tbReplies.Name = "tbReplies";
+            this.tbReplies.Size = new System.Drawing.Size(100, 20);
+            this.tbReplies.TabIndex = 7;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(609, 368);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbReplies);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lbQuery);
             this.Controls.Add(this.gbOracle);
@@ -346,7 +346,7 @@
         private System.Windows.Forms.Label lbEFOracleTime;
         private System.Windows.Forms.Label lbQuery;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbReplies;
     }
 }
 

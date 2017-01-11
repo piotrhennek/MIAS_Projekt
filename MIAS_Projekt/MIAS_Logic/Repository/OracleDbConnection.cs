@@ -31,7 +31,7 @@ namespace MIAS_Logic.Repository
                 connection.Dispose();
         }
 
-        public List<long> RunQuery(string query)
+        public List<long> RunQuery(string query, int replies)
         {
       
             Connect();
@@ -43,7 +43,7 @@ namespace MIAS_Logic.Repository
             var listOfResults = new List<Dictionary<string, object>>();
             var listOfElapsedMilliseconds = new List<long>();
 
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < replies; i++)
             {
                 Stopwatch stw = new Stopwatch();
                 stw.Start();

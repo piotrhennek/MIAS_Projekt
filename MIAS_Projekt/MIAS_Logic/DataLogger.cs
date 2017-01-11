@@ -11,21 +11,25 @@ namespace MIAS_Logic
     {
         public static void Log(StringBuilder msg)
         {
+            StringBuilder csvContent = new StringBuilder();
             string naglowek = string.Empty;
-            FileInfo file = new FileInfo(@"C:\Temp\logs.csv");
+            string fileName = @"C:\Temp\logs.csv";
+            FileInfo file = new FileInfo(fileName);
             if (!file.Exists)
             {
                 file.Directory.Create();
-                naglowek= "Query,Database,Time,Rows";
+                naglowek = "Query,Database,Time";
+                csvContent.AppendLine(naglowek);
             }
-                
-
-            using (StreamWriter writer = file.AppendText())
-            {
-                if (!string.IsNullOrEmpty(naglowek))
-                    writer.WriteLine(naglowek);
-                writer.WriteLine(msg);
-            }
+            
+            csvContent.AppendLine(msg.ToString());
+            //  using (StreamWriter writer = file.AppendText())
+            // //  {
+            //     if (!string.IsNullOrEmpty(naglowek))
+            ///        writer.WriteLine(naglowek);
+            //  writer.WriteLine(msg);
+            //}
+            File.AppendAllText(fileName, csvContent.ToString());
         }
     }
 }
