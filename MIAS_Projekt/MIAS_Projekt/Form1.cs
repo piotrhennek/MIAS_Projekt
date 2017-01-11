@@ -38,13 +38,11 @@ namespace MIAS_Projekt
         private void SetResults()
         {
             var time = 0;
-            var rows = 1;
             var results = logic.GetQueriesTimes();
             try
             {
                 var viciSqlResult = results[DatabasesEnum.ViciSql];
                 lbSqlServerCSTime.Text = viciSqlResult[time].ToString();
-                lbSqlServerCSRows.Text = viciSqlResult[rows].ToString();
             }
             catch (Exception exc)
             {
@@ -54,7 +52,6 @@ namespace MIAS_Projekt
             {
                 var viciOracleResult = results[DatabasesEnum.ViciOracle];
                 lbOracleCSTime.Text = viciOracleResult[time].ToString();
-                lbOracleCSRows.Text = viciOracleResult[rows].ToString();
             }
             catch (Exception exc)
             {
@@ -64,7 +61,6 @@ namespace MIAS_Projekt
             {
                 var efSqlResult = results[DatabasesEnum.EntityFrameworkSql];
                 lbEFSqlTime.Text = efSqlResult[time].ToString();
-                lbEFSqlRows.Text = efSqlResult[rows].ToString();
             }
             catch (Exception exc)
             {
@@ -74,7 +70,6 @@ namespace MIAS_Projekt
             {
                 var efOracleResult = results[DatabasesEnum.EntityFrameworkOracle];
                 lbEFOracleTime.Text = efOracleResult[time].ToString();
-                lbEFOracleRows.Text = efOracleResult[rows].ToString();
             }
             catch (Exception exc)
             {
@@ -85,7 +80,6 @@ namespace MIAS_Projekt
             {
                 var repoSqlResult = results[DatabasesEnum.RepositorySql];
                 lbRepoSqlTime.Text = repoSqlResult[time].ToString();
-                lbRepoSqlRows.Text = repoSqlResult[rows].ToString();
             }
             catch (Exception exc)
             {
@@ -95,7 +89,6 @@ namespace MIAS_Projekt
             {
                 var repoOracleResult = results[DatabasesEnum.RepositoryOracle];
                 lbRepoOracleTime.Text = repoOracleResult[time].ToString();
-                lbRepoOracleRows.Text = repoOracleResult[rows].ToString();
                 logic.LogData();
             }
             catch (Exception exc)
@@ -105,6 +98,11 @@ namespace MIAS_Projekt
         }
 
         private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

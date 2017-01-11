@@ -32,27 +32,19 @@
             this.CheckTime = new System.Windows.Forms.Button();
             this.gbSqlServer = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lbRepoSqlRows = new System.Windows.Forms.Label();
             this.lbRepoSqlTime = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lbEFSqlRows = new System.Windows.Forms.Label();
             this.lbEFSqlTime = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.gbSqlServerVici = new System.Windows.Forms.GroupBox();
-            this.lbSqlServerCSRows = new System.Windows.Forms.Label();
             this.lbSqlServerCSTime = new System.Windows.Forms.Label();
             this.gbOracle = new System.Windows.Forms.GroupBox();
             this.gbEFORacle = new System.Windows.Forms.GroupBox();
-            this.lbEFOracleRows = new System.Windows.Forms.Label();
             this.lbEFOracleTime = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.lbRepoOracleRows = new System.Windows.Forms.Label();
             this.lbRepoOracleTime = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.lbOracleCSRows = new System.Windows.Forms.Label();
             this.lbOracleCSTime = new System.Windows.Forms.Label();
             this.lbQuery = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -70,7 +62,7 @@
             // tbQuery
             // 
             this.tbQuery.Location = new System.Drawing.Point(130, 229);
-            this.tbQuery.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbQuery.Margin = new System.Windows.Forms.Padding(2);
             this.tbQuery.Multiline = true;
             this.tbQuery.Name = "tbQuery";
             this.tbQuery.Size = new System.Drawing.Size(470, 66);
@@ -79,7 +71,7 @@
             // CheckTime
             // 
             this.CheckTime.Location = new System.Drawing.Point(514, 310);
-            this.CheckTime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CheckTime.Margin = new System.Windows.Forms.Padding(2);
             this.CheckTime.Name = "CheckTime";
             this.CheckTime.Size = new System.Drawing.Size(86, 47);
             this.CheckTime.TabIndex = 1;
@@ -91,13 +83,12 @@
             // 
             this.gbSqlServer.Controls.Add(this.groupBox2);
             this.gbSqlServer.Controls.Add(this.groupBox1);
-            this.gbSqlServer.Controls.Add(this.label2);
             this.gbSqlServer.Controls.Add(this.label1);
             this.gbSqlServer.Controls.Add(this.gbSqlServerVici);
             this.gbSqlServer.Location = new System.Drawing.Point(9, 10);
-            this.gbSqlServer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbSqlServer.Margin = new System.Windows.Forms.Padding(2);
             this.gbSqlServer.Name = "gbSqlServer";
-            this.gbSqlServer.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbSqlServer.Padding = new System.Windows.Forms.Padding(2);
             this.gbSqlServer.Size = new System.Drawing.Size(282, 190);
             this.gbSqlServer.TabIndex = 3;
             this.gbSqlServer.TabStop = false;
@@ -105,26 +96,15 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.lbRepoSqlRows);
             this.groupBox2.Controls.Add(this.lbRepoSqlTime);
             this.groupBox2.Location = new System.Drawing.Point(4, 142);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(273, 43);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Repository";
-            // 
-            // lbRepoSqlRows
-            // 
-            this.lbRepoSqlRows.AutoSize = true;
-            this.lbRepoSqlRows.Location = new System.Drawing.Point(224, 22);
-            this.lbRepoSqlRows.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbRepoSqlRows.Name = "lbRepoSqlRows";
-            this.lbRepoSqlRows.Size = new System.Drawing.Size(34, 13);
-            this.lbRepoSqlRows.TabIndex = 1;
-            this.lbRepoSqlRows.Text = "Rows";
             // 
             // lbRepoSqlTime
             // 
@@ -138,26 +118,15 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lbEFSqlRows);
             this.groupBox1.Controls.Add(this.lbEFSqlTime);
             this.groupBox1.Location = new System.Drawing.Point(4, 91);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(273, 46);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "EntityFramework6";
-            // 
-            // lbEFSqlRows
-            // 
-            this.lbEFSqlRows.AutoSize = true;
-            this.lbEFSqlRows.Location = new System.Drawing.Point(224, 15);
-            this.lbEFSqlRows.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbEFSqlRows.Name = "lbEFSqlRows";
-            this.lbEFSqlRows.Size = new System.Drawing.Size(34, 13);
-            this.lbEFSqlRows.TabIndex = 1;
-            this.lbEFSqlRows.Text = "Rows";
             // 
             // lbEFSqlTime
             // 
@@ -169,48 +138,28 @@
             this.lbEFSqlTime.TabIndex = 0;
             this.lbEFSqlTime.Text = "Time";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(231, 16);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Ilość";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(118, 16);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 13);
+            this.label1.Size = new System.Drawing.Size(132, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Czas";
+            this.label1.Text = "Średni czas zapytania [ms]";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // gbSqlServerVici
             // 
-            this.gbSqlServerVici.Controls.Add(this.lbSqlServerCSRows);
             this.gbSqlServerVici.Controls.Add(this.lbSqlServerCSTime);
             this.gbSqlServerVici.Location = new System.Drawing.Point(4, 32);
-            this.gbSqlServerVici.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbSqlServerVici.Margin = new System.Windows.Forms.Padding(2);
             this.gbSqlServerVici.Name = "gbSqlServerVici";
-            this.gbSqlServerVici.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbSqlServerVici.Padding = new System.Windows.Forms.Padding(2);
             this.gbSqlServerVici.Size = new System.Drawing.Size(273, 54);
             this.gbSqlServerVici.TabIndex = 0;
             this.gbSqlServerVici.TabStop = false;
             this.gbSqlServerVici.Text = "ViciCoolStorage";
-            // 
-            // lbSqlServerCSRows
-            // 
-            this.lbSqlServerCSRows.AutoSize = true;
-            this.lbSqlServerCSRows.Location = new System.Drawing.Point(226, 27);
-            this.lbSqlServerCSRows.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbSqlServerCSRows.Name = "lbSqlServerCSRows";
-            this.lbSqlServerCSRows.Size = new System.Drawing.Size(34, 13);
-            this.lbSqlServerCSRows.TabIndex = 1;
-            this.lbSqlServerCSRows.Text = "Rows";
             // 
             // lbSqlServerCSTime
             // 
@@ -226,13 +175,12 @@
             // 
             this.gbOracle.Controls.Add(this.gbEFORacle);
             this.gbOracle.Controls.Add(this.groupBox3);
-            this.gbOracle.Controls.Add(this.label4);
             this.gbOracle.Controls.Add(this.label3);
             this.gbOracle.Controls.Add(this.groupBox4);
             this.gbOracle.Location = new System.Drawing.Point(308, 10);
-            this.gbOracle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbOracle.Margin = new System.Windows.Forms.Padding(2);
             this.gbOracle.Name = "gbOracle";
-            this.gbOracle.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbOracle.Padding = new System.Windows.Forms.Padding(2);
             this.gbOracle.Size = new System.Drawing.Size(292, 190);
             this.gbOracle.TabIndex = 4;
             this.gbOracle.TabStop = false;
@@ -240,26 +188,15 @@
             // 
             // gbEFORacle
             // 
-            this.gbEFORacle.Controls.Add(this.lbEFOracleRows);
             this.gbEFORacle.Controls.Add(this.lbEFOracleTime);
             this.gbEFORacle.Location = new System.Drawing.Point(8, 91);
-            this.gbEFORacle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbEFORacle.Margin = new System.Windows.Forms.Padding(2);
             this.gbEFORacle.Name = "gbEFORacle";
-            this.gbEFORacle.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbEFORacle.Padding = new System.Windows.Forms.Padding(2);
             this.gbEFORacle.Size = new System.Drawing.Size(280, 46);
             this.gbEFORacle.TabIndex = 4;
             this.gbEFORacle.TabStop = false;
             this.gbEFORacle.Text = "EntityFramework6";
-            // 
-            // lbEFOracleRows
-            // 
-            this.lbEFOracleRows.AutoSize = true;
-            this.lbEFOracleRows.Location = new System.Drawing.Point(233, 15);
-            this.lbEFOracleRows.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbEFOracleRows.Name = "lbEFOracleRows";
-            this.lbEFOracleRows.Size = new System.Drawing.Size(34, 13);
-            this.lbEFOracleRows.TabIndex = 1;
-            this.lbEFOracleRows.Text = "Rows";
             // 
             // lbEFOracleTime
             // 
@@ -273,26 +210,15 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.lbRepoOracleRows);
             this.groupBox3.Controls.Add(this.lbRepoOracleTime);
             this.groupBox3.Location = new System.Drawing.Point(8, 142);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(280, 43);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Repository";
-            // 
-            // lbRepoOracleRows
-            // 
-            this.lbRepoOracleRows.AutoSize = true;
-            this.lbRepoOracleRows.Location = new System.Drawing.Point(233, 15);
-            this.lbRepoOracleRows.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbRepoOracleRows.Name = "lbRepoOracleRows";
-            this.lbRepoOracleRows.Size = new System.Drawing.Size(34, 13);
-            this.lbRepoOracleRows.TabIndex = 1;
-            this.lbRepoOracleRows.Text = "Rows";
             // 
             // lbRepoOracleTime
             // 
@@ -304,48 +230,27 @@
             this.lbRepoOracleTime.TabIndex = 0;
             this.lbRepoOracleTime.Text = "Time";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(241, 16);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 13);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Ilość";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(136, 16);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 13);
+            this.label3.Size = new System.Drawing.Size(132, 13);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Czas";
+            this.label3.Text = "Średni czas zapytania [ms]";
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.lbOracleCSRows);
             this.groupBox4.Controls.Add(this.lbOracleCSTime);
             this.groupBox4.Location = new System.Drawing.Point(8, 32);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox4.Size = new System.Drawing.Size(280, 54);
             this.groupBox4.TabIndex = 0;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "ViciCoolStorage";
-            // 
-            // lbOracleCSRows
-            // 
-            this.lbOracleCSRows.AutoSize = true;
-            this.lbOracleCSRows.Location = new System.Drawing.Point(233, 27);
-            this.lbOracleCSRows.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbOracleCSRows.Name = "lbOracleCSRows";
-            this.lbOracleCSRows.Size = new System.Drawing.Size(34, 13);
-            this.lbOracleCSRows.TabIndex = 1;
-            this.lbOracleCSRows.Text = "Rows";
             // 
             // lbOracleCSTime
             // 
@@ -424,28 +329,20 @@
         private System.Windows.Forms.TextBox tbQuery;
         private System.Windows.Forms.Button CheckTime;
         private System.Windows.Forms.GroupBox gbSqlServer;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox gbSqlServerVici;
-        private System.Windows.Forms.Label lbSqlServerCSRows;
         private System.Windows.Forms.Label lbSqlServerCSTime;
         private System.Windows.Forms.GroupBox gbOracle;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Label lbOracleCSRows;
         private System.Windows.Forms.Label lbOracleCSTime;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label lbEFSqlRows;
         private System.Windows.Forms.Label lbEFSqlTime;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label lbRepoSqlRows;
         private System.Windows.Forms.Label lbRepoSqlTime;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label lbRepoOracleRows;
         private System.Windows.Forms.Label lbRepoOracleTime;
         private System.Windows.Forms.GroupBox gbEFORacle;
-        private System.Windows.Forms.Label lbEFOracleRows;
         private System.Windows.Forms.Label lbEFOracleTime;
         private System.Windows.Forms.Label lbQuery;
         private System.Windows.Forms.Label label5;

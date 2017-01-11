@@ -19,48 +19,48 @@ namespace MIAS_Logic
     }
     public class RepositoriesLogic
     {
-       
+
         public string Query { get; set; }
-        private IDictionary<DatabasesEnum, string[]> queriesTimeDictionary { get; set; }
+        private IDictionary<DatabasesEnum, string> queriesTimeDictionary { get; set; }
         public int resultCount;
 
         public RepositoriesLogic()
         {
-            queriesTimeDictionary = new Dictionary<DatabasesEnum, string[]>();
+            queriesTimeDictionary = new Dictionary<DatabasesEnum, string>();
             //DB.InitOracleDB(DatabasesConfig.OracleConnectionString);
             //DB.InitSQLDB(DatabasesConfig.SqlConnectionString);
         }
-        
+
         public void RunViciCoolStorageQueries()
         {
-            RunViciCoolStorageSqlQuery();
-          //  RunViciCoolStorageOracleQuery();
+            //   RunViciCoolStorageSqlQuery();
+            RunViciCoolStorageOracleQuery();
         }
         public void RunEntityFrameworkQueries()
         {
-            RunEntityFrameworkSqlQuery();
-            try{
+            //   RunEntityFrameworkSqlQuery();
+            try
+            {
                 RunEntityFrameworkOracleQuery();
             }
-            catch(Exception exc)
+            catch (Exception exc)
             {
                 Trace.WriteLine($"OracleEntityFrameworkExc: {exc.Message}");
             }
-            
+
         }
 
         public void RunRepositoryQueries()
         {
 
-            RunRepoSqlQuery();
+            //    RunRepoSqlQuery();
 
-   //         RunRepoOracleQuery();
+            RunRepoOracleQuery();
         }
 
         private void RunEntityFrameworkSqlQuery()
         {
             Trace.WriteLine("EntityFramework Sql Method");
-            int count = 0;
             var listOfResults = new List<List<QueryResult>>();
             var listOfElapsedMilliseconds = new List<long>();
             using (DbContext context = new MIASDbContext(DatabasesConfig.EntityFrameworkSqlName))
@@ -73,40 +73,45 @@ namespace MIAS_Logic
                     stw.Stop();
                     listOfResults.Add(result);
                     listOfElapsedMilliseconds.Add(stw.ElapsedMilliseconds);
-
                 }
             }
-            queriesTimeDictionary.Add(DatabasesEnum.EntityFrameworkSql, 
-                new string[2] { $"{listOfElapsedMilliseconds.Average()}ms", $"{resultCount}rows" });
+            queriesTimeDictionary.Add(DatabasesEnum.EntityFrameworkSql, $"{listOfElapsedMilliseconds.Average()}");
         }
         private void RunEntityFrameworkOracleQuery()
         {
             Trace.WriteLine("EntityFramework Oracle Method");
-            int count = 0;
 
-            Stopwatch stw = new Stopwatch();
-            stw.Start();
+            var listOfResults = new List<List<QueryResult>>();
+            var listOfElapsedMilliseconds = new List<long>();
+            Stopwatch stwatch = new Stopwatch();
+            stwatch.Start();
             try
             {
                 using (DbContext context = new MIASDbContext(DatabasesConfig.EntityFrameworkOracleName))
                 {
-                    count = context.Database.SqlQuery<object>(Query).Count();
+
+                    for (int i = 1; i <= 100; i++)
+                    {
+                        Stopwatch stw = new Stopwatch();
+                        stw.Start();
+                        stwatch.Stop();
+                        listOfElapsedMilliseconds.Add(stwatch.ElapsedMilliseconds);
+                        var result = context.Database.SqlQuery<QueryResult>(Query).ToList();
+                        stw.Stop();
+                        listOfResults.Add(result);
+                        listOfElapsedMilliseconds.Add(stw.ElapsedMilliseconds);
+                    }
                 }
-                stw.Stop();
-                queriesTimeDictionary.Add(DatabasesEnum.EntityFrameworkOracle,
-                    new string[2] { $"{stw.ElapsedMilliseconds}ms", $"{count}rows" });
+                queriesTimeDictionary.Add(DatabasesEnum.EntityFrameworkOracle, $"{listOfElapsedMilliseconds.Average()}");
             }
             catch
             {
-
-                stw.Stop();
-                queriesTimeDictionary.Add(DatabasesEnum.EntityFrameworkOracle,
-                    new string[2] { $"{stw.ElapsedMilliseconds}ms", $"{resultCount}rows" });
+                queriesTimeDictionary.Add(DatabasesEnum.EntityFrameworkOracle, $"{listOfElapsedMilliseconds.Average()}");
             }
         }
 
 
-        public IDictionary<DatabasesEnum, string[]> GetQueriesTimes()
+        public IDictionary<DatabasesEnum, string> GetQueriesTimes()
         {
             return queriesTimeDictionary;
         }
@@ -125,7 +130,7 @@ namespace MIAS_Logic
                 stw.Stop();
                 listOfElapsedMilliseconds.Add(stw.ElapsedMilliseconds);
             }
-            queriesTimeDictionary.Add(DatabasesEnum.ViciSql, new string[2] { $"{listOfElapsedMilliseconds.Average()}ms", $"{listOfResults.FirstOrDefault().Count}rows" });
+            queriesTimeDictionary.Add(DatabasesEnum.ViciSql, $"{listOfElapsedMilliseconds.Average()}");
         }
 
         private void RunViciCoolStorageOracleQuery()
@@ -143,25 +148,25 @@ namespace MIAS_Logic
                 listOfElapsedMilliseconds.Add(stw.ElapsedMilliseconds);
             }
 
-            queriesTimeDictionary.Add(DatabasesEnum.ViciOracle, new string[2] { $"{listOfElapsedMilliseconds.Average()}ms", $"{listOfResults.FirstOrDefault().Count}rows" });
+            queriesTimeDictionary.Add(DatabasesEnum.ViciOracle, $"{listOfElapsedMilliseconds.Average()}");
         }
 
         private void RunRepoSqlQuery()
         {
             var listOfElapsedMiliseconds = new SqlDbConnection().RunQuery(Query);
-            queriesTimeDictionary.Add(DatabasesEnum.RepositorySql, new string[2] { $"{listOfElapsedMiliseconds.Average()}ms", $"rows" });
+            queriesTimeDictionary.Add(DatabasesEnum.RepositorySql, $"{listOfElapsedMiliseconds.Average()}");
         }
 
         private void RunRepoOracleQuery()
         {
             var listOfElapsedMiliseconds = new OracleDbConnection().RunQuery(Query);
-            queriesTimeDictionary.Add(DatabasesEnum.RepositoryOracle, new string[2] { $"{listOfElapsedMiliseconds.Average()}ms", $"rows" });
+            queriesTimeDictionary.Add(DatabasesEnum.RepositoryOracle, $"{listOfElapsedMiliseconds.Average()}");
         }
 
         public void LogData()
         {
             StringBuilder sb = new StringBuilder();
-            foreach(var item in queriesTimeDictionary)
+            foreach (var item in queriesTimeDictionary)
             {
                 sb.AppendLine($"{Query},{item.Key},{item.Value[0]},{item.Value[1]}");
             }
