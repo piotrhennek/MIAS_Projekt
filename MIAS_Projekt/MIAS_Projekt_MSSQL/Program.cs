@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MIAS_Projekt
+namespace MIAS_Projekt_MSSQL
 {
     static class Program
     {

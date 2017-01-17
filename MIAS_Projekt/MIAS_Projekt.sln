@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MIAS_Projekt", "MIAS_Projekt\MIAS_Projekt.csproj", "{538A804E-57A3-4A0A-8D8C-1A61F8E45C63}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MIAS_Test", "MIAS_Test\MIAS_Test.csproj", "{1F3AE5FC-EC06-42F9-9B45-069BE4AE9111}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MIAS_Logic", "MIAS_Logic\MIAS_Logic.csproj", "{EC7CD6F2-7951-4A08-B537-BE3C40CDFA68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MIAS_Projekt_MSSQL", "MIAS_Projekt_MSSQL\MIAS_Projekt_MSSQL.csproj", "{538A804E-57A3-4A0A-8D8C-1A61F8E45C63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MIAS_Projekt_ORACLE", "MIAS_Projekt_ORACLE\MIAS_Projekt_ORACLE.csproj", "{1481EA6E-DE71-4822-A116-716CB2B6A8F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{538A804E-57A3-4A0A-8D8C-1A61F8E45C63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{538A804E-57A3-4A0A-8D8C-1A61F8E45C63}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{538A804E-57A3-4A0A-8D8C-1A61F8E45C63}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{538A804E-57A3-4A0A-8D8C-1A61F8E45C63}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1F3AE5FC-EC06-42F9-9B45-069BE4AE9111}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1F3AE5FC-EC06-42F9-9B45-069BE4AE9111}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F3AE5FC-EC06-42F9-9B45-069BE4AE9111}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -27,6 +25,14 @@ Global
 		{EC7CD6F2-7951-4A08-B537-BE3C40CDFA68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC7CD6F2-7951-4A08-B537-BE3C40CDFA68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC7CD6F2-7951-4A08-B537-BE3C40CDFA68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{538A804E-57A3-4A0A-8D8C-1A61F8E45C63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{538A804E-57A3-4A0A-8D8C-1A61F8E45C63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{538A804E-57A3-4A0A-8D8C-1A61F8E45C63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{538A804E-57A3-4A0A-8D8C-1A61F8E45C63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1481EA6E-DE71-4822-A116-716CB2B6A8F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1481EA6E-DE71-4822-A116-716CB2B6A8F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1481EA6E-DE71-4822-A116-716CB2B6A8F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1481EA6E-DE71-4822-A116-716CB2B6A8F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

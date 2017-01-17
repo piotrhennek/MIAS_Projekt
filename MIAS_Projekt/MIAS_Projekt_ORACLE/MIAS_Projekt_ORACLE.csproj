@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EC7CD6F2-7951-4A08-B537-BE3C40CDFA68}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{1481EA6E-DE71-4822-A116-716CB2B6A8F5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MIAS_Logic</RootNamespace>
-    <AssemblyName>MIAS_Logic</AssemblyName>
+    <RootNamespace>MIAS_Projekt</RootNamespace>
+    <AssemblyName>MIAS_Projekt</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -30,15 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Devart.Data">
-      <HintPath>..\packages\dotConnect\Devart.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="Devart.Data.Oracle">
-      <HintPath>..\packages\dotConnect\Devart.Data.Oracle.dll</HintPath>
-    </Reference>
-    <Reference Include="Devart.Data.Oracle.Entity">
-      <HintPath>..\packages\dotConnect\Devart.Data.Oracle.Entity.dll</HintPath>
-    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -66,43 +60,55 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Vici.CoolStorage, Version=1.5.3.1022, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\vici.coolstorage.1.5.3.1022\lib\net35\Vici.CoolStorage.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Vici.Core, Version=2.0.3.4932, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\vici.core.2.0.3\lib\net45\Vici.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DatabasesConfig.cs" />
-    <Compile Include="DatabasesEnum.cs" />
-    <Compile Include="DataLogger.cs" />
-    <Compile Include="EntityFramework\MIASDbContext.cs" />
-    <Compile Include="Models\CustomersModel.cs" />
-    <Compile Include="Models\InventoriesModel.cs" />
-    <Compile Include="Models\ModelBase.cs" />
-    <Compile Include="Models\OrderItemsModel.cs" />
-    <Compile Include="Models\OrdersModel.cs" />
-    <Compile Include="Models\ProductDescriptionModel.cs" />
-    <Compile Include="Models\ProductInformationModel.cs" />
-    <Compile Include="Models\WarehousesModel.cs" />
-    <Compile Include="OracleHelper.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RepositoriesLogic.cs" />
-    <Compile Include="QueryData.cs" />
-    <Compile Include="Repository\OracleDbConnection.cs" />
-    <Compile Include="Repository\IDbConnection.cs" />
-    <Compile Include="Repository\SqlDbConnection.cs" />
-    <Compile Include="ViciCoolstorage\CSDataProviderOracle.cs" />
-    <Compile Include="ViciCoolstorage\ViciCoolstorageRepository.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MIAS_Logic\MIAS_Logic.csproj">
+      <Project>{ec7cd6f2-7951-4a08-b537-be3c40cdfa68}</Project>
+      <Name>MIAS_Logic</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

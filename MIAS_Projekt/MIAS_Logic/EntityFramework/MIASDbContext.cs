@@ -4,7 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Devart.Data.Oracle.Entity;
 namespace MIAS_Logic.EntityFramework
 {
     public class MIASDbContext : DbContext

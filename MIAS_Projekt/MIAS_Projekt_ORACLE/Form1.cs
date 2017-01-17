@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MIAS_Projekt
+namespace MIAS_Projekt_ORACLE
 {
     public partial class Form1 : Form
     {
@@ -30,9 +30,9 @@ namespace MIAS_Projekt
         {
             logic.Replies = int.Parse(tbReplies.Text);
             logic.Query = tbQuery.Text;
-            logic.RunViciCoolStorageQueries();
-            logic.RunEntityFrameworkQueries();
-            logic.RunRepositoryQueries();
+          //  logic.RunViciCoolStorageOracleQuery();
+           // logic.RunEntityFrameworkOracleQuery();
+            logic.RunRepoOracleQuery();
             SetResults();
         }
 

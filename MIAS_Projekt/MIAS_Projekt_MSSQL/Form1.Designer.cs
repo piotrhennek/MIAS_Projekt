@@ -1,4 +1,4 @@
-﻿namespace MIAS_Projekt
+﻿namespace MIAS_Projekt_MSSQL
 {
     partial class Form1
     {
@@ -61,16 +61,16 @@
             // 
             // tbQuery
             // 
-            this.tbQuery.Location = new System.Drawing.Point(130, 229);
+            this.tbQuery.Location = new System.Drawing.Point(74, 229);
             this.tbQuery.Margin = new System.Windows.Forms.Padding(2);
             this.tbQuery.Multiline = true;
             this.tbQuery.Name = "tbQuery";
-            this.tbQuery.Size = new System.Drawing.Size(470, 66);
+            this.tbQuery.Size = new System.Drawing.Size(212, 66);
             this.tbQuery.TabIndex = 0;
             // 
             // CheckTime
             // 
-            this.CheckTime.Location = new System.Drawing.Point(514, 310);
+            this.CheckTime.Location = new System.Drawing.Point(200, 310);
             this.CheckTime.Margin = new System.Windows.Forms.Padding(2);
             this.CheckTime.Name = "CheckTime";
             this.CheckTime.Size = new System.Drawing.Size(86, 47);
@@ -283,16 +283,16 @@
             // 
             // tbReplies
             // 
-            this.tbReplies.Location = new System.Drawing.Point(130, 310);
+            this.tbReplies.Location = new System.Drawing.Point(100, 310);
             this.tbReplies.Name = "tbReplies";
-            this.tbReplies.Size = new System.Drawing.Size(100, 20);
+            this.tbReplies.Size = new System.Drawing.Size(95, 20);
             this.tbReplies.TabIndex = 7;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(609, 368);
+            this.ClientSize = new System.Drawing.Size(304, 368);
             this.Controls.Add(this.tbReplies);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lbQuery);
