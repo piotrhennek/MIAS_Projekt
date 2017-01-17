@@ -188,7 +188,7 @@ namespace MIAS_Logic
             {
                 foreach (var value in key.Value)
                 {
-                    sb.AppendLine($"{Query},{key.Key},{value}");
+                    sb.AppendLine($"{key.Key},{value}");
                 }
             }
             DataLogger.Log(sb);
@@ -201,7 +201,6 @@ namespace MIAS_Logic
             {
                 queriesTimesMultiDictionary.Add(dbe.ToString(), elapsedMilisecond.ToString());
             }
-            queriesTimesMultiDictionary.Add("", "");
         }
 
     }

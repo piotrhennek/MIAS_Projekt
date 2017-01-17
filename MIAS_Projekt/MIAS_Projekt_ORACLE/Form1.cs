@@ -38,7 +38,6 @@ namespace MIAS_Projekt_ORACLE
 
         private void SetResults()
         {
-            var time = 0;
             var results = logic.GetQueriesTimes();
             try
             {

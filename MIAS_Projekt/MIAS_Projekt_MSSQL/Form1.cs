@@ -38,12 +38,11 @@ namespace MIAS_Projekt_MSSQL
 
         private void SetResults()
         {
-            var time = 0;
-            var results = logic.GetQueriesTimes();
+                        var results = logic.GetQueriesTimes();
             try
             {
                 var viciSqlResult = results[DatabasesEnum.ViciSql];
-                lbSqlServerCSTime.Text = viciSqlResult[time].ToString();
+                lbSqlServerCSTime.Text = viciSqlResult;
             }
             catch (Exception exc)
             {
@@ -52,7 +51,7 @@ namespace MIAS_Projekt_MSSQL
             try
             {
                 var viciOracleResult = results[DatabasesEnum.ViciOracle];
-                lbOracleCSTime.Text = viciOracleResult[time].ToString();
+                lbOracleCSTime.Text = viciOracleResult;
             }
             catch (Exception exc)
             {
@@ -61,7 +60,7 @@ namespace MIAS_Projekt_MSSQL
             try
             {
                 var efSqlResult = results[DatabasesEnum.EntityFrameworkSql];
-                lbEFSqlTime.Text = efSqlResult[time].ToString();
+                lbEFSqlTime.Text = efSqlResult;
             }
             catch (Exception exc)
             {
@@ -70,7 +69,7 @@ namespace MIAS_Projekt_MSSQL
             try
             {
                 var efOracleResult = results[DatabasesEnum.EntityFrameworkOracle];
-                lbEFOracleTime.Text = efOracleResult[time].ToString();
+                lbEFOracleTime.Text = efOracleResult;
             }
             catch (Exception exc)
             {
@@ -80,7 +79,7 @@ namespace MIAS_Projekt_MSSQL
             try
             {
                 var repoSqlResult = results[DatabasesEnum.RepositorySql];
-                lbRepoSqlTime.Text = repoSqlResult[time].ToString();
+                lbRepoSqlTime.Text = repoSqlResult;
             }
             catch (Exception exc)
             {
@@ -89,7 +88,7 @@ namespace MIAS_Projekt_MSSQL
             try
             {
                 var repoOracleResult = results[DatabasesEnum.RepositoryOracle];
-                lbRepoOracleTime.Text = repoOracleResult[time].ToString();
+                lbRepoOracleTime.Text = repoOracleResult;
                 
             }
             catch (Exception exc)
