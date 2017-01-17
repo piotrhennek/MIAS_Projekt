@@ -67,7 +67,8 @@ namespace MIAS_Logic
             var listOfElapsedMilliseconds = new List<long>();
             using (DbContext context = new MIASDbContext(DatabasesConfig.EntityFrameworkSqlName))
             {
-                for (int i = 1; i <= Replies; i++)
+                var test = context.Database.SqlQuery<QueryResult>(Query).ToList();
+                for (int i = 1; i < Replies; i++)
                 {
                     Stopwatch stw = new Stopwatch();
                     stw.Start();
@@ -93,8 +94,9 @@ namespace MIAS_Logic
             {
                 using (DbContext context = new MIASDbContext("data source = (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 217.173.198.136)(PORT = 1522))(CONNECT_DATA = (SID = orclwh))); user id = s85137; password = malybaza;"))
                 {
+                    var test = context.Database.SqlQuery<QueryResult>(Query).ToList();
 
-                    for (int i = 1; i <= Replies; i++)
+                    for (int i = 1; i < Replies; i++)
                     {
                         Stopwatch stw = new Stopwatch();
                         stw.Start();
@@ -127,7 +129,8 @@ namespace MIAS_Logic
             DatabasesConfig.InitViciSQLDB();
             List<CSGenericRecordList> listOfResults = new List<CSGenericRecordList>();
             var listOfElapsedMilliseconds = new List<long>();
-            for (int i = 0; i <= Replies; i++)
+            CSDatabase.Context[DatabasesConfig.SQLCONTEXT].RunQuery(Query);
+            for (int i = 0; i < Replies; i++)
             {
                 Stopwatch stw = new Stopwatch();
 
@@ -146,7 +149,8 @@ namespace MIAS_Logic
             DatabasesConfig.InitViciOracleDB();
             List<CSGenericRecordList> listOfResults = new List<CSGenericRecordList>();
             var listOfElapsedMilliseconds = new List<long>();
-            for (int i = 0; i <= Replies; i++)
+            CSDatabase.Context[DatabasesConfig.ORACLECONTEXT].RunQuery(Query);
+            for (int i = 0; i < Replies; i++)
             {
                 Stopwatch stw = new Stopwatch();
 
