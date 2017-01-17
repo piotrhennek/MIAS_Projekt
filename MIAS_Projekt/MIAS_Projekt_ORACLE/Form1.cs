@@ -30,8 +30,8 @@ namespace MIAS_Projekt_ORACLE
         {
             logic.Replies = int.Parse(tbReplies.Text);
             logic.Query = tbQuery.Text;
-          //  logic.RunViciCoolStorageOracleQuery();
-           // logic.RunEntityFrameworkOracleQuery();
+            logic.RunViciCoolStorageOracleQuery();
+            logic.RunEntityFrameworkOracleQuery();
             logic.RunRepoOracleQuery();
             SetResults();
         }
@@ -90,7 +90,7 @@ namespace MIAS_Projekt_ORACLE
             {
                 var repoOracleResult = results[DatabasesEnum.RepositoryOracle];
                 lbRepoOracleTime.Text = repoOracleResult[time].ToString();
-                
+
             }
             catch (Exception exc)
             {
