@@ -92,7 +92,7 @@ namespace MIAS_Logic
             stwatch.Start();
             try
             {
-                using (DbContext context = new MIASDbContext("data source = (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 217.173.198.136)(PORT = 1522))(CONNECT_DATA = (SID = orclwh))); user id = s85137; password = malybaza;"))
+                using (DbContext context = new MIASDbContext(DatabasesConfig.EntityFrameworkOracleName))
                 {
                     var test = context.Database.SqlQuery<QueryResult>(Query).ToList();
 

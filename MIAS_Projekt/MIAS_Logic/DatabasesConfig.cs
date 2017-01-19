@@ -11,7 +11,7 @@ namespace MIAS_Logic
     public static class DatabasesConfig
     {
         public const string EntityFrameworkSqlName = "name=SqlServerConnectionString";
-        public const string EntityFrameworkOracleName = "name=OracleServerConnectionString";
+        public const string EntityFrameworkOracleName = "name=SqlServerConnectionString";
 
         public const string SqlConnectionString = @"Server=PEDRO\INSOFT2014;Database=test;Trusted_Connection=True;";
         public const string OracleConnectionString = "Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 217.173.198.136)(PORT = 1522))(CONNECT_DATA =(SERVER=DEDICATED)(SID = orclwh)));User Id=s84038;Password=student_s84038;";
